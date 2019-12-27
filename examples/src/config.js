@@ -1,6 +1,6 @@
 export default {
-  clientId: "5df1295ce8023519f7598b7f",
-  clientSecret: "b7f216c3-7a14-479f-9b7f-eafd0de72bfa",
+  clientId: "452884945640385",
+  clientSecret: "0d5b9d4a7528596fdd9af504458bd770",
   customClassName: "my-custom-class",
   themeOptions: [
     {

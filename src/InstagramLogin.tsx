@@ -57,26 +57,25 @@ export default class InstagramLoginComponent extends React.Component<
   buildCodeRequestURL = () => {
     const { clientId, redirectUri } = this.props;
     const uri = encodeURIComponent(redirectUri || window.location.href);
-    return `https://api.instagram.dev/v1/oauth/authorize?client_id=${clientId}&redirect_uri=${uri}&response_type=code`;
+    const scope = "user_profile,user_media";
+    return `https://api.instagram.com/oauth/authorize?app_id=${clientId}&redirect_uri=${uri}&scope=${scope}&response_type=code`;
   };
 
   sendTokenRequest = (code: string) => {
     const { clientId, clientSecret, redirectUri } = this.props;
     const uri = redirectUri || window.location.href;
+    const formData = new FormData();
+    formData.append("app_id", clientId);
+    formData.append("app_secret", clientSecret);
+    formData.append("redirect_uri", uri);
+    formData.append("code", code);
+    formData.append("grant_type", "authorization_code");
+
     return fetch(
-      "https://cors-anywhere.herokuapp.com/https://api.instagram.dev/v1/oauth/token",
+      "https://cors-anywhere.herokuapp.com/https://api.instagram.com/oauth/access_token",
       {
         method: "POST",
-        body: JSON.stringify({
-          client_id: clientId,
-          client_secret: clientSecret,
-          redirect_uri: uri,
-          code,
-          grant_type: "authorization_code"
-        }),
-        headers: {
-          "Content-Type": "application/json"
-        }
+        body: formData
       }
     );
   };
