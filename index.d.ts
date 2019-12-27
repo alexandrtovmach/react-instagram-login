@@ -1,6 +1,6 @@
 import * as React from "react";
 
-type InstagramLoginButtonTheme = "dark_short" | "light_short" | "dark" | "light" | "classic";
+type InstagramLoginButtonTheme = "gradient" | "simple" | "gradient_short" | "simple_short";
 
 interface InstagramLoginProps {
   /**
