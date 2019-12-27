@@ -109,7 +109,7 @@ export default class InstagramLoginComponent extends React.Component<
     return (
       <>
         <InstagramLoginButton
-          buttonTheme={buttonTheme || "classic"}
+          buttonTheme={buttonTheme || "gradient"}
           buttonClassName={className}
           onClick={this.handleLoginClick}
         />
