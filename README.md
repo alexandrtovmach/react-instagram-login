@@ -1,0 +1,64 @@
+# react-instagram-login
+
+[![npm](https://img.shields.io/npm/v/react-instagram-login?logo=npm&cacheSeconds=1800)](https://www.npmjs.com/package/react-instagram-login)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-instagram-login?cacheSeconds=1800)](https://www.npmjs.com/package/react-instagram-login)
+[![npm](https://img.shields.io/npm/dt/react-instagram-login?cacheSeconds=1800)](https://www.npmjs.com/package/react-instagram-login)
+
+React component for a simple OAuth login with Instagram.
+
+[DEMO HERE](https://alexandrtovmach.github.io/react-instagram-login/)
+
+![button examples](https://user-images.githubusercontent.com/28801003/71491334-c82ea080-2838-11ea-862d-96529b907bec.png)
+
+## 🚀 Get Started
+
+Follow these steps to start using React Instagram Login:
+
+1. Installation
+
+   ```sh
+   # with npm
+   npm i react-instagram-login
+
+   # with yarn
+   yarn add react-instagram-login
+   ```
+
+2. Import and configure component.
+
+   ```jsx
+   import React from "react";
+   import InstagramLogin from "react-instagram-login";
+
+   export default props => {
+     const authHandler = (err, data) => {
+       console.log(err, data);
+     };
+
+     return (
+       <InstagramLogin
+         authCallback={authHandler}
+         clientId={CLIENT_ID}
+         clientSecret={CLIENT_SECRET}
+         redirectUri={REDIRECT_URI}
+       />
+     );
+   };
+   ```
+
+3. Find more info about keys and OAuth apps in [Instagram official docs](https://docs.instagram.dev/reference#authentication)
+
+## 📖 API
+
+| Property     | Type                                                                    | Default     | Description                                                                                               |
+| ------------ | ----------------------------------------------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------- |
+| authCallback | function                                                                | required    | Callback function which takes two arguments `(error, authData)`                                           |
+| clientId     | string                                                                  | required    | Client ID of your OAuth App                                                                               |
+| clientSecret | string                                                                  | required    | Client Secret of your OAuth App                                                                           |
+| redirectUri  | string                                                                  | required    | Authorization callback URL of your OAuth App                                                              |
+| buttonTheme  | enum(`"classic"`, `"light"`, `"light_short"`, `"dark"`, `"dark_short"`) | `"classic"` | Button style theme. Just `"classic"` is approved by Instagram team, and de-facto is only one official option |
+| className    | string                                                                  | `""`        | Custom class name                                                                                         |
+
+## 📝 License
+
+[MIT](https://github.com/alexandrtovmach/react-instagram-login/blob/master/LICENSE)
