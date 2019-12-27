@@ -44,11 +44,11 @@ export default class ExaplePage extends React.Component {
         <Segment basic>
           <Container text>
             <Header as='h2'>
-              react-instagram-login
+              react-instagram-oauth
               <Label basic size="mini" as='a' href="https://github.com/alexandrtovmach/react-instagram-login">
                 <Icon name='github' />GitHub
               </Label>
-              <Label basic size="mini" as='a' href="https://www.npmjs.com/package/react-instagram-login">
+              <Label basic size="mini" as='a' href="https://www.npmjs.com/package/react-instagram-oauth">
                 <Icon name='npm' />NPM
               </Label>
             </Header>

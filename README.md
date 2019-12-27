@@ -1,8 +1,8 @@
-# react-instagram-login
+# react-instagram-oauth
 
-<!-- [![npm](https://img.shields.io/npm/v/react-instagram-login?logo=npm&cacheSeconds=1800)](https://www.npmjs.com/package/react-instagram-login)
-[![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-instagram-login?cacheSeconds=1800)](https://www.npmjs.com/package/react-instagram-login)
-[![npm](https://img.shields.io/npm/dt/react-instagram-login?cacheSeconds=1800)](https://www.npmjs.com/package/react-instagram-login) -->
+<!-- [![npm](https://img.shields.io/npm/v/react-instagram-oauth?logo=npm&cacheSeconds=1800)](https://www.npmjs.com/package/react-instagram-oauth)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-instagram-oauth?cacheSeconds=1800)](https://www.npmjs.com/package/react-instagram-oauth)
+[![npm](https://img.shields.io/npm/dt/react-instagram-oauth?cacheSeconds=1800)](https://www.npmjs.com/package/react-instagram-oauth) -->
 
 React component for a simple OAuth login with Instagram.
 
@@ -18,17 +18,17 @@ Follow these steps to start using React Instagram Login:
 
    ```sh
    # with npm
-   npm i react-instagram-login
+   npm i react-instagram-oauth
 
    # with yarn
-   yarn add react-instagram-login
+   yarn add react-instagram-oauth
    ```
 
 2. Import and configure component.
 
    ```jsx
    import React from "react";
-   import InstagramLogin from "react-instagram-login";
+   import InstagramLogin from "react-instagram-oauth";
 
    export default props => {
      const authHandler = (err, data) => {

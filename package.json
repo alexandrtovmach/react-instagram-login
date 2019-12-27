@@ -1,5 +1,5 @@
 {
-  "name": "react-instagram-login",
+  "name": "react-instagram-oauth",
   "description": "React component for simple OAuth with Instagram",
   "main": "dist/index.js",
   "version": "0.0.1",
