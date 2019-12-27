@@ -6,12 +6,12 @@ interface InstagramLoginProps {
   /**
    * Application (client) ID
    */
-  clientId: string;
+  appId: string;
 
   /**
    * Application (client) ID
    */
-  clientSecret: string;
+  appSecret: string;
 
   /**
    * Callback function which takes two arguments (error, authData)
@@ -27,6 +27,11 @@ interface InstagramLoginProps {
    * Name of theme for button style.
    */
   buttonTheme?: InstagramLoginButtonTheme;
+
+  /**
+   * List of requested scopes
+   */
+  scope?: string[];
 
   /**
    * Additional class name string.

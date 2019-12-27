@@ -38,26 +38,27 @@ Follow these steps to start using React Instagram Login:
      return (
        <InstagramLogin
          authCallback={authHandler}
-         clientId={CLIENT_ID}
-         clientSecret={CLIENT_SECRET}
+         appId={CLIENT_ID}
+         appSecret={CLIENT_SECRET}
          redirectUri={REDIRECT_URI}
        />
      );
    };
    ```
 
-3. Find more info about keys and OAuth apps in [Instagram official docs](https://docs.instagram.dev/reference#authentication)
+3. Find more info about keys and OAuth apps in [Instagram official docs](https://developers.facebook.com/docs/instagram-basic-display-api/getting-started)
 
 ## 📖 API
 
-| Property     | Type                                                                    | Default     | Description                                                                                               |
-| ------------ | ----------------------------------------------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------- |
-| authCallback | function                                                                | required    | Callback function which takes two arguments `(error, authData)`                                           |
-| clientId     | string                                                                  | required    | Client ID of your OAuth App                                                                               |
-| clientSecret | string                                                                  | required    | Client Secret of your OAuth App                                                                           |
-| redirectUri  | string                                                                  | required    | Authorization callback URL of your OAuth App                                                              |
-| buttonTheme  | enum(`"classic"`, `"light"`, `"light_short"`, `"dark"`, `"dark_short"`) | `"classic"` | Button style theme. Just `"classic"` is approved by Instagram team, and de-facto is only one official option |
-| className    | string                                                                  | `""`        | Custom class name                                                                                         |
+| Property     | Type                                                                 | Default            | Description                                                                                                                         |
+| ------------ | -------------------------------------------------------------------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
+| authCallback | function                                                             | required           | Callback function which takes two arguments `(error, authData)`                                                                     |
+| appId        | string                                                               | required           | App ID of your OAuth App                                                                                                            |
+| appSecret    | string                                                               | required           | App Secret of your OAuth App                                                                                                        |
+| redirectUri  | string                                                               | required           | Authorization callback URL of your OAuth App                                                                                        |
+| scopes       | string[]                                                             | `["user_profile"]` | Scopes list. Read more on [Permissions page](https://developers.facebook.com/docs/instagram-basic-display-api/overview#permissions) |
+| buttonTheme  | enum(`"gradient"`, `"simple"`, `"gradient_short"`, `"simple_short"`) | `"gradient"`       | Button style theme                                                                                                                  |
+| className    | string                                                               | `""`               | Custom class name                                                                                                                   |
 
 ## 📝 License
 

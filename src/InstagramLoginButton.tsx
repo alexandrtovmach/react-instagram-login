@@ -67,8 +67,8 @@ const InstagramLoginButton: React.SFC<InstagramLoginButtonProps> = ({
             y2="11.555"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#582FC2" />
-            <stop offset="1" stop-color="#E40042" />
+            <stop stopColor="#582FC2" />
+            <stop offset="1" stopColor="#E40042" />
           </linearGradient>
         </defs>
       </svg>
@@ -121,8 +121,8 @@ const InstagramLoginButton: React.SFC<InstagramLoginButtonProps> = ({
             y2="48"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#582FC2" />
-            <stop offset="1" stop-color="#E40042" />
+            <stop stopColor="#582FC2" />
+            <stop offset="1" stopColor="#E40042" />
           </linearGradient>
         </defs>
       </svg>

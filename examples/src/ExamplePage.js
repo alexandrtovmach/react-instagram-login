@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Header, Label, Icon, Segment, Select, Radio, Form } from 'semantic-ui-react';
+import { Container, Header, Label, Icon, Segment, Select, Form } from 'semantic-ui-react';
 
 import config from "./config";
 import InstagramLogin from "../../dist";
@@ -8,13 +8,14 @@ export default class ExaplePage extends React.Component {
   constructor(props, context) {
     super(props, context);
 
-		const { clientId, clientSecret, themeOptions, customClassName } = config;    
+		const { appId, appSecret, themeOptions, scopesOptions, customClassName } = config;    
     this.state = {
-      clientId,
-      clientSecret,
+      appId,
+      appSecret,
 			customClassName,
       redirectUri: window.location.href,
       buttonTheme: themeOptions[0].value,
+      scopes: [scopesOptions[0].value],
       withUserData: true,
       customButton: false,
       forceRedirectStrategy: false,
@@ -37,7 +38,7 @@ export default class ExaplePage extends React.Component {
   };
 
   render() {
-    const { clientId, clientSecret, buttonTheme, customClassName, redirectUri } = this.state;
+    const { appId, appSecret, buttonTheme, customClassName, redirectUri, scopes } = this.state;
     return (
       <div className="viewport">
         <Segment basic>
@@ -60,17 +61,17 @@ export default class ExaplePage extends React.Component {
                 <Form.Field>
                   <label>Client ID</label>
                   <input
-                    onChange={e => this.handleChange(e.target.value, "clientId")}
-                    placeholder={config.clientId}
-                    value={clientId}
+                    onChange={e => this.handleChange(e.target.value, "appId")}
+                    placeholder={config.appId}
+                    value={appId}
                   />
                 </Form.Field>
                 <Form.Field>
                   <label>Client Secret</label>
                   <input
-                    onChange={e => this.handleChange(e.target.value, "clientSecret")}
-                    placeholder={config.clientSecret}
-                    value={clientSecret}
+                    onChange={e => this.handleChange(e.target.value, "appSecret")}
+                    placeholder={config.appSecret}
+                    value={appSecret}
                   />
                 </Form.Field>
                 <Form.Field>
@@ -93,6 +94,18 @@ export default class ExaplePage extends React.Component {
                   />
                 </Form.Field>
                 <Form.Field>
+                  <label>Scopes</label>
+                  <Select
+                    onChange={(e, data) => this.handleChange(data.value, "scopes")}
+                    labeled
+                    multiple
+                    label="Scopes"
+                    placeholder='Select scopes'
+                    options={config.scopesOptions}
+                    defaultValue={scopes}
+                  />
+                </Form.Field>
+                <Form.Field>
                   <label>Class name</label>
                   <input
                     onChange={e => this.handleChange(e.target.value, "customClassName")}
@@ -106,21 +119,13 @@ export default class ExaplePage extends React.Component {
                     {`(err, data) => console.log(err, data)`}
                   </code>
                 </Form.Field>
-                {/* <Form.Field>
-                  <Radio
-                    onChange={(e, data) => this.handleChange(data.checked, "debug")}
-                    label="Debug"
-                    defaultChecked={debug}
-                    toggle
-                  />
-                </Form.Field> */}
               </Form>
             </Segment>
             <Segment>
               <InstagramLogin
-                // debug={debug}
-                clientId={clientId}
-                clientSecret={clientSecret}
+                appId={appId}
+                appSecret={appSecret}
+                scope={scopes}
                 authCallback={this.loginHandler}
                 buttonTheme={buttonTheme}
                 className={customClassName}

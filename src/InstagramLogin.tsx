@@ -55,18 +55,19 @@ export default class InstagramLoginComponent extends React.Component<
   };
 
   buildCodeRequestURL = () => {
-    const { clientId, redirectUri } = this.props;
+    const { appId, redirectUri, scope } = this.props;
     const uri = encodeURIComponent(redirectUri || window.location.href);
-    const scope = "user_profile,user_media";
-    return `https://api.instagram.com/oauth/authorize?app_id=${clientId}&redirect_uri=${uri}&scope=${scope}&response_type=code`;
+    return `https://api.instagram.com/oauth/authorize?app_id=${appId}&redirect_uri=${uri}&scope=${scope?.join(
+      ","
+    ) || "user_profile"}&response_type=code`;
   };
 
   sendTokenRequest = (code: string) => {
-    const { clientId, clientSecret, redirectUri } = this.props;
+    const { appId, appSecret, redirectUri } = this.props;
     const uri = redirectUri || window.location.href;
     const formData = new FormData();
-    formData.append("app_id", clientId);
-    formData.append("app_secret", clientSecret);
+    formData.append("app_id", appId);
+    formData.append("app_secret", appSecret);
     formData.append("redirect_uri", uri);
     formData.append("code", code);
     formData.append("grant_type", "authorization_code");
