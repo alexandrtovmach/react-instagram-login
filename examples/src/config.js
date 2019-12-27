@@ -4,29 +4,24 @@ export default {
   customClassName: "my-custom-class",
   themeOptions: [
     {
-      key: "classic",
-      value: "classic",
-      text: "classic"
+      key: "gradient",
+      value: "gradient",
+      text: "gradient"
     },
     {
-      key: "dark",
-      value: "dark",
-      text: "dark"
+      key: "simple",
+      value: "simple",
+      text: "simple"
     },
     {
-      key: "light",
-      value: "light",
-      text: "light"
+      key: "gradient_short",
+      value: "gradient_short",
+      text: "gradient_short"
     },
     {
-      key: "dark_short",
-      value: "dark_short",
-      text: "dark_short"
-    },
-    {
-      key: "light_short",
-      value: "light_short",
-      text: "light_short"
+      key: "simple_short",
+      value: "simple_short",
+      text: "simple_short"
     }
   ]
 };
