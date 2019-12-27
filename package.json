@@ -2,7 +2,7 @@
   "name": "react-instagram-login",
   "description": "React component for simple OAuth with Instagram",
   "main": "dist/index.js",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "author": {
     "name": "Alexandr Tovmach",
     "url": "https://alexandrtovmach.com/",
