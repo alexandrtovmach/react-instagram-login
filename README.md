@@ -8,7 +8,7 @@ React component for a simple OAuth login with Instagram.
 
 [DEMO HERE](https://alexandrtovmach.github.io/react-instagram-login/)
 
-![button examples](https://user-images.githubusercontent.com/28801003/71491334-c82ea080-2838-11ea-862d-96529b907bec.png)
+![button examples](https://user-images.githubusercontent.com/28801003/71528596-48acda00-28e9-11ea-9299-02908e6ea0ee.png)
 
 ## 🚀 Get Started
 
