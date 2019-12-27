@@ -1,8 +1,8 @@
 # react-instagram-oauth
 
-<!-- [![npm](https://img.shields.io/npm/v/react-instagram-oauth?logo=npm&cacheSeconds=1800)](https://www.npmjs.com/package/react-instagram-oauth)
+[![npm](https://img.shields.io/npm/v/react-instagram-oauth?logo=npm&cacheSeconds=1800)](https://www.npmjs.com/package/react-instagram-oauth)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-instagram-oauth?cacheSeconds=1800)](https://www.npmjs.com/package/react-instagram-oauth)
-[![npm](https://img.shields.io/npm/dt/react-instagram-oauth?cacheSeconds=1800)](https://www.npmjs.com/package/react-instagram-oauth) -->
+[![npm](https://img.shields.io/npm/dt/react-instagram-oauth?cacheSeconds=1800)](https://www.npmjs.com/package/react-instagram-oauth)
 
 React component for a simple OAuth login with Instagram.
 
