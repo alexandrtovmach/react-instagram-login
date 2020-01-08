@@ -1,6 +1,6 @@
 export default {
-  appId: "452884945640385",
-  appSecret: "0d5b9d4a7528596fdd9af504458bd770",
+  appId: "2669088873181727",
+  appSecret: "bcf9f03a399195854d8e4d3be65197ac",
   customClassName: "my-custom-class",
   scopesOptions: [
     {
