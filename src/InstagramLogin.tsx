@@ -36,8 +36,10 @@ export default class InstagramLoginComponent extends React.Component<
       window.onmessage = ({ data: { type, data } }: any) => {
         if (type === "code") {
           this.sendTokenRequest(data)
-            .then(res => res.json())
-            .then(data => {
+            .then(res => res.text())
+            .then(text => {
+              text = text.replace(/"user_id":\s*(\d+)/, '"user_id":"$1"'); // wrap user_id in quotes to prevent numeric parsing
+              const data = JSON.parse(text);
               const { popup } = this.state;
               this.setState(
                 {
@@ -72,13 +74,10 @@ export default class InstagramLoginComponent extends React.Component<
     formData.append("code", code);
     formData.append("grant_type", "authorization_code");
 
-    return fetch(
-      "https://cors-anywhere.herokuapp.com/https://api.instagram.com/oauth/access_token",
-      {
-        method: "POST",
-        body: formData
-      }
-    );
+    return fetch("https://api.instagram.com/oauth/access_token", {
+      method: "POST",
+      body: formData
+    });
   };
 
   handleLoginClick = () => {
